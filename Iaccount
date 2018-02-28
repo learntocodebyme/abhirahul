@@ -1,0 +1,19 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bank_Portal
+{
+    interface Iaccount
+    {
+        int Acid { get; set; }
+        int Cuid { get; set; }
+        string Actyp { get; set; }
+        int Damnt { get; set; }
+        DateTime Ast{ get; set; }
+    string Acs { get; set; }
+
+}
+}
