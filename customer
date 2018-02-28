@@ -1,0 +1,111 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bank_Portal
+{
+    class Customer:Icustomer
+    {
+        static int a = 5000;
+        int cid;
+        string name;
+        DateTime dob;
+        string Gn;
+        string city;
+        long cno;
+
+        public int Cid
+        {
+            get
+            {
+                return cid;
+            }
+
+            set
+            {
+                cid = value;
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                name = value;
+            }
+        }
+
+        public DateTime Dob
+        {
+            get
+            {
+                return dob;
+            }
+
+            set
+            {
+                dob = value;
+            }
+        }
+
+        public string Gn1
+        {
+            get
+            {
+                return Gn;
+            }
+
+            set
+            {
+                Gn = value;
+            }
+        }
+
+        public string City
+        {
+            get
+            {
+                return city;
+            }
+
+            set
+            {
+                city = value;
+            }
+        }
+
+        public long Cno
+        {
+            get
+            {
+                return cno;
+            }
+
+            set
+            {
+                cno = value;
+            }
+        }
+
+        public Customer(int cid, string name, DateTime dob, string gn, string city, long cno)
+        {
+            this.Cid = cid;
+            this.Name = name;
+            this.Dob = dob;
+            Gn1 = gn;
+            this.City = city;
+            this.Cno = cno;
+        }
+        public Customer()
+        {
+            cid = a++;
+        }
+    }
+}
