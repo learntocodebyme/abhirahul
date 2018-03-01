@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bank_Portal
 {
-    class Customer:Icustomer
+    class Customer : Icustomer
     {
         static int a = 5000;
         int cid;
