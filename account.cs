@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Bank_Portal
 {
-    class Account:Iaccount
+    class Account : Iaccount
     {
-      static  int a = 1000;
+        static int a = 1000;
         int acid;
         int cuid;
         string actyp;
@@ -106,6 +106,12 @@ namespace Bank_Portal
         public Account()
         {
             acid = a++;
+        }
+       public  Account(int cid1, int aid1,int amount)
+        {
+            this.Acid = aid1;
+            this.Cuid = cid1;
+            this.Damnt = amount;
         }
     }
 }
