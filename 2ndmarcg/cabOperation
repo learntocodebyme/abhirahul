@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practice
+{
+    class CabOperation : IcabOperation
+    {
+        List<IcabDetails> booklist = new List<IcabDetails>();
+        public int Book(IcabDetails obj)
+        {
+            booklist.Add(obj);
+            return obj.Bid1;
+        }
+        public void view()
+        {
+            Console.Clear();
+            Console.WriteLine("--------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("Booking Id\t\tName\t\tLocation\t\tDeparture Time\t\tDestination\t\tDistance\t\tContact number");
+            Console.WriteLine("--------------------------------------------------------------------------------------------------------");
+            foreach (IcabDetails a in booklist)
+            {//  
+                Console.WriteLine(a.Bid1 + "\t\t" + a.Name1 + "\t\t" + a.To_Location1 + "\t\t" + Convert.ToString(a.D_Time1).Split(' ')[1] + "\t\t" + a.To_Location1 + "\t\t" + a.Distance1 + "\t\t" + a.Cab_contact1);
+            }
+
+
+        }
+        public void viewbyid(int id)
+        {
+            // List<IcabDetails> temp = new List<IcabDetails>();
+            foreach (IcabDetails b in booklist)
+
+            {
+                if (b.Bid1 == id)
+                {
+                    Console.Clear();
+                    Console.WriteLine("--------------------------------------------------------------------------------------------------------");
+                    Console.WriteLine("Booking Id\t\tName\t\tLocation\t\tDeparture Time\t\tDestination\t\tDistance\t\tContact number");
+                    Console.WriteLine("--------------------------------------------------------------------------------------------------------");
+                    Console.WriteLine(b.Bid1 + "\t\t" + b.Name1 + "\t\t" + b.To_Location1 + "\t\t" + Convert.ToString(b.D_Time1).Split(' ')[1] + "\t\t" + b.To_Location1 + "\t\t" + b.Distance1 + "\t\t" + b.Cab_contact1);
+
+                }
+                else Console.WriteLine("This booking id is not present in the list");
+
+            }
+        }
+    }
+}
