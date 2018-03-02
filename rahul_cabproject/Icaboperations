@@ -1,0 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cab_Booking_Operation
+{
+    interface Icaboperation
+    {
+        int ADD(Icabdetails obj);
+        List<Icabdetails> View(Icabdetails obj);
+        int Update(Icabdetails obj);
+        int Cancel(Icabdetails obj);
+    }
+}
