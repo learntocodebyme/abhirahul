@@ -1,0 +1,79 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cab_Booking_Operation
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string choice;
+            Icaboperation abc = new CabOperations();
+            do
+            {
+               
+
+               
+                Console.WriteLine("1. Book A cab");
+                Console.WriteLine("2. View Booking Details for the specific Booking Reference Number");
+                Console.WriteLine("3. Update From Location, To Location, Departure Time");
+                Console.WriteLine("4. Update From Location, To Location, Departure Time");
+                Console.WriteLine("Enter your choice");
+                choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+
+                        Icabdetails obj = new CabDetails();
+                        Console.WriteLine("Enter the Passenger Name");
+                        obj.P_N1 = Console.ReadLine();
+                        Console.WriteLine("Entr your location");
+                        obj.F_L1 = Console.ReadLine();
+                        Console.WriteLine("Enter the departure time");
+                        obj.D_T1 = Convert.ToDateTime(Console.ReadLine());
+                        Console.WriteLine("Enter your Dropping Location");
+                        obj.T_L1 = Console.ReadLine();
+                        Console.WriteLine("Enter the Distance you want to travel");
+                        obj.Dis1 = Convert.ToInt16(Console.ReadLine());
+                        //Console.WriteLine("Enter the estimated amount");
+                        //obj.E_A1 = Convert.ToInt16(Console.ReadLine());
+
+                        Console.WriteLine("Enter the type of cab");
+                        Console.WriteLine("Micro / Mini");
+                        obj.C_T1 = Console.ReadLine();
+                        if (obj.C_T1 == "Micro")
+                        {
+                            obj.E_A1 = obj.Dis1 * 45;
+
+                        }
+                        else if (obj.C_T1 == "Mini")
+                        {
+                            obj.E_A1 = obj.Dis1 * 30;
+                        }
+                        Console.WriteLine("The estimated amount for your journey is" +"\t" + obj.E_A1 + "with Booking Reference Number is" + abc.ADD(obj));
+
+                        break;
+
+                    case "2":
+                        List<Icabdetails> lst = new List<Icabdetails>();
+                        Icabdetails obj1 = new CabDetails();
+                        Console.WriteLine("Enter the Booking Reference Number");
+                        obj1.A = Convert.ToInt16(Console.ReadLine());
+                        //Console.WriteLine(obj1.A +\t\t+ )
+                        lst =  abc.View(obj1);
+                        break;
+
+                }
+                    
+
+
+
+
+            } while (choice != "0");
+        }
+    }
+}
