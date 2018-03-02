@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cab_Booking_Operation 
+{
+    
+
+    class CabOperations : Icaboperation
+    {
+        static List<Icabdetails> temp = new List<Icabdetails>();
+
+        public int ADD(Icabdetails obj)
+        {
+            temp.Add(obj);
+            return obj.A;
+
+        }
+
+        public List<Icabdetails> View(Icabdetails obj)
+        {
+            Icabdetails iobj = new CabDetails();
+            List<Icabdetails> temp = new List<Icabdetails>();
+            foreach (Icabdetails a in temp)
+            {
+                {
+                    if (a.A == obj.A)
+                    {
+                    //  Console.Clear();
+                    //    Console.WriteLine("**********************************************************************************************************");
+                      //  Console.WriteLine("Booking id\t\tPassenger Name\t\t\tGoing From\t\t\tGoing To\t\t\tDistance\t\t\tContact Number");
+                     //   Console.WriteLine("**********************************************************************************************************");
+                     //   Console.WriteLine(a.A + "\t\t" + a.P_N1 + "\t\t" + a.F_L1 + "\t\t" + a.T_L1 + "\t\t" + a.Dis1 + "\t\t" + a.CCN1);
+                        temp.Add(obj);
+                        //return temp(obj);
+                    }
+                 }
+
+             }
+            return temp;
+        }
+
+       public int Update(Icabdetails obj)
+        {
+            return 0;
+
+        }
+        public int Cancel(Icabdetails obj)             
+        {
+            return 0;
+        }
+    }
+}
