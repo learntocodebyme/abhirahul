@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cab_Booking_Operation
+{
+    interface Icabdetails
+    {
+        int A { get; set; }
+        string P_N1 { get; set; }
+        string F_L1 { get; set; }
+        DateTime D_T1 { get; set; }
+        string T_L1 { get; set; }
+        int Dis1 { get; set; }
+        int E_A1 { get; set; }
+        string C_T1 { get; set; }
+        long CCN1 { get; set; }
+       // int a { get; set; }
+        //string P_N1 { get; set; }
+    }
+}
