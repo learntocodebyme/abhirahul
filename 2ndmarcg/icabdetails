@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practice
+{
+    interface IcabDetails
+    {
+       
+
+        int Bid1 { get; set; }
+        string Name1 { get; set; }
+        string From_location1 { get; set; }
+        DateTime D_Time1 { get; set; }
+        string To_Location1 { get; set; }
+        float Distance1 { get; set; }
+        float Amount1 { get; set; }
+        string Cab_Type1 { get; set; }
+        long Cab_contact1 { get; set; }
+    }
+}
