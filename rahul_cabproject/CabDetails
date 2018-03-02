@@ -1,0 +1,157 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cab_Booking_Operation
+{
+    class CabDetails : Icabdetails
+    {
+       static int BRN = 5000;
+       int a;
+       string P_N;
+       string F_L;
+       DateTime D_T;
+       string T_L;
+       int Dis;
+       int E_A;
+       string C_T;
+       long CCN;
+
+        public string P_N1
+        {
+            get
+            {
+                return P_N;
+            }
+
+            set
+            {
+                P_N = value;
+            }
+        }
+
+        public string F_L1
+        {
+            get
+            {
+                return F_L;
+            }
+
+            set
+            {
+                F_L = value;
+            }
+        }
+
+        public DateTime D_T1
+        {
+            get
+            {
+                return D_T;
+            }
+
+            set
+            {
+                D_T = value;
+            }
+        }
+
+        public string T_L1
+        {
+            get
+            {
+                return T_L;
+            }
+
+            set
+            {
+                T_L = value;
+            }
+        }
+
+        public int Dis1
+        {
+            get
+            {
+                return Dis;
+            }
+
+            set
+            {
+                Dis = value;
+            }
+        }
+
+        public int E_A1
+        {
+            get
+            {
+                return E_A;
+            }
+
+            set
+            {
+                E_A = value;
+            }
+        }
+
+        public string C_T1
+        {
+            get
+            {
+                return C_T;
+            }
+
+            set
+            {
+                C_T = value;
+            }
+        }
+
+        public long CCN1
+        {
+            get
+            {
+                return CCN;
+            }
+
+            set
+            {
+                CCN = value;
+            }
+        }
+
+        public int A
+        {
+            get
+            {
+                return a;
+            }
+
+            set
+            {
+                a = value;
+            }
+        }
+
+        public CabDetails( string p_N, string f_L, DateTime d_T, string t_L, int dis, int e_A, string c_T, long cCN)
+        {
+            this.P_N = p_N;
+            this.F_L = f_L;
+            this.D_T = d_T;
+            this.T_L = t_L;
+            this.Dis = dis;
+            this.E_A = e_A;
+            this.C_T = c_T;
+            this.CCN = cCN;
+        }
+        public CabDetails()
+        {
+            a = BRN++;
+
+        }
+
+            }
+}
