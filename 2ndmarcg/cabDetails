@@ -1,0 +1,168 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practice
+{
+    class CabDetails:IcabDetails
+    {
+        static int a = 5000;
+        int Bid;
+        string Name;
+        string From_location;
+        DateTime D_Time;
+        string To_Location;
+        float Distance;
+        float Amount;
+        string Cab_Type;
+        long Cab_contact;
+
+        public static int A
+        {
+            get
+            {
+                return a;
+            }
+
+            set
+            {
+                a = value;
+            }
+        }
+
+        public int Bid1
+        {
+            get
+            {
+                return Bid;
+            }
+
+            set
+            {
+                Bid = value;
+            }
+        }
+
+        public string Name1
+        {
+            get
+            {
+                return Name;
+            }
+
+            set
+            {
+                Name = value;
+            }
+        }
+
+        public string From_location1
+        {
+            get
+            {
+                return From_location;
+            }
+
+            set
+            {
+                From_location = value;
+            }
+        }
+
+        public DateTime D_Time1
+        {
+            get
+            {
+                return D_Time;
+            }
+
+            set
+            {
+                D_Time = value;
+            }
+        }
+
+        public string To_Location1
+        {
+            get
+            {
+                return To_Location;
+            }
+
+            set
+            {
+                To_Location = value;
+            }
+        }
+
+        public float Distance1
+        {
+            get
+            {
+                return Distance;
+            }
+
+            set
+            {
+                Distance = value;
+            }
+        }
+
+        public float Amount1
+        {
+            get
+            {
+                return Amount;
+            }
+
+            set
+            {
+                Amount = value;
+            }
+        }
+
+        public string Cab_Type1
+        {
+            get
+            {
+                return Cab_Type;
+            }
+
+            set
+            {
+                Cab_Type = value;
+            }
+        }
+
+        public long Cab_contact1
+        {
+            get
+            {
+                return Cab_contact;
+            }
+
+            set
+            {
+                Cab_contact = value;
+            }
+        }
+             public CabDetails()
+        {
+          Bid =  a++;
+
+        }
+
+        public CabDetails(int bid,string name, string From_location, DateTime D_Time, string To_Location, float Distance, float Amount, string Cab_Type, long Cab_contact)
+        {
+
+        }
+
+
+    }
+
+}
+       
+    
+
