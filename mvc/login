@@ -1,0 +1,25 @@
+@model WebApplication1.Models.ass123
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+        <table border="1">
+            <tr>
+                <td>@Html.LabelFor(s=>s.EmployeeID)</td>
+                <td>@Html.TextBoxFor(s => s.EmployeeID)</td>
+                <td>@Html.ValidationMessageFor(s => s.EmployeeID)</td>
+             </tr>
+            <tr>
+                <td>@Html.LabelFor(s => s.password)</td>
+                <td>@Html.PasswordFor(s =>s.password)</td>
+                <td>@Html.ValidationMessageFor(s => s.password)</td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="submit"></td>
+                </tr>
+        </table>
+}
+
