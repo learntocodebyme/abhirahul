@@ -1,0 +1,72 @@
+use db01test01
+
+create table ass123
+(EmployeeID int identity(1000,1) primary key,name varchar(50),password varchar(15),sid int foreign key references ass123(EmployeeID))
+
+select * from ass123
+
+create table leave23
+(Lid int identity(2000,1),Ltype varchar(10),Ldate DateTime, EID int foreign key references ass123(EmployeeID),LReason varchar(25),Lstatus varchar(15) default 'Pending')
+
+create proc inse12
+(@name varchar(50),@password varchar(15),@sid int,@EID int out)
+as
+begin 
+insert into ass123 values(@name,@password,@sid)
+set @EID=@@identity
+end
+
+exec inse12 'Abhishek','tcstvm',null,0
+exec inse12 'Bipin','password',null,0
+exec inse12 'Rahul','passwor',1001,0
+exec inse12 'Ankit','passwo',1001,0
+exec inse12 'Jayram','pass1234',1000,0
+exec inse12 'Asad','pass0000',1000,0
+
+create proc loogiin
+as
+begin
+select * from ass123
+end
+
+select * from ass123 
+select * from leave23
+
+create proc main_hai
+@sid int
+as
+begin
+select  EID, name  , count (EID)  
+as no_of_leaves 
+from ass123 join  leave23
+on EmployeeID=EID
+where sid=@sid
+group by EID,name
+end;
+
+insert into leave23  ( Ltype ,Ldate , EID , LReason ) values ('sick', '12/12/2015',1002,'fever')
+insert into leave23  (  Ltype ,Ldate , EID ,LReason ) values ('casual', '12/12/2015',1002,'Marriage')
+insert into leave23  ( Ltype ,Ldate , EID , LReason ) values ('casual', '11/10/2015',1003,'party')
+insert into leave23  (  Ltype ,Ldate , EID ,LReason ) values ('casual', '05/11/2015',1004,'puja')
+
+insert into leave23  ( Ltype ,Ldate , EID , LReason ) values ('sick', '12/12/2015',1004,'fever')
+insert into leave23  (  Ltype ,Ldate , EID ,LReason ) values ('casual', '12/12/2015',1005,'appointment')
+
+
+
+create proc e_ke_ll
+@e int
+AS
+begin
+select * from leave23 join ass123 on EID=EmployeeID where EID=@e 
+end;
+
+create proc updlev
+@lid int,@status varchar(15)
+as
+begin
+update leave23 set Lstatus= @status where Lid = @lid
+end; 
+
+
+
