@@ -1,0 +1,51 @@
+@model WebApplication1.Models.leave23
+@{
+    ViewBag.Title = "Leave Details";
+}
+@{
+    List<SelectListItem> lst = new List<SelectListItem>();
+    lst.Add(new SelectListItem { Text = "1000", Value = "1000" });
+    lst.Add(new SelectListItem { Text = "1001", Value = "1001" });
+    lst.Add(new SelectListItem { Text = "1002", Value = "1002" });
+    lst.Add(new SelectListItem { Text = "1003", Value = "1003" });
+}
+
+<h2>Leave Details</h2>
+@using (Html.BeginForm())
+{
+<table>
+    <tr>View leaves by employee Id</tr>
+    <tr>@Html.DropDownListFor(s => s.EID, lst, "select")</tr>
+    <tr><input type="submit" value="Search" /></tr>
+</table>
+}
+<table border="1" cellpadding="10">
+    <thead>
+        <th>Employee Id</th>
+        <th>Leave Id</th>
+        <th>Employee Name</th>
+        <th>Leave Type</th>
+        <th>Leave Date</th>
+        <th>Leave Reason</th>
+        <th>Status</th>
+        <th>Action</th>
+    </thead>
+    @foreach(var v in ViewBag.xyz)
+    
+        {
+        <tr>
+            <td>@v.EID</td>
+            <td>@v.Lid</td>
+            <td>@v.name</td>
+            <td>@v.Ltype</td>
+            <td>@Convert.ToString(@v.Ldate).Split(' ')[0]</td>
+            <td>@v.LReason</td>
+            <td>@v.Lstatus</td>
+            <td>@Html.ActionLink("Approve","approve", new { @v.Lid , @v.EID})|
+                @Html.ActionLink("Reject", "reject", new { @v.Lid, @v.EID })</td>
+        </tr>
+
+         }
+</table>
+
+
