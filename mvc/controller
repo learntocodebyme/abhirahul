@@ -1,0 +1,72 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using WebApplication1.Models;
+
+namespace WebApplication1.Controllers
+{
+    public class LeaveController : Controller
+    {
+        // GET: Leave
+        public ActionResult Index()
+        {
+            return View();
+
+        }
+        [HttpPost]
+        public ActionResult Index(ass123 obj)
+        {
+           // Session["user"] = obj.EmployeeID;
+
+            //int empid = Convert.ToInt32(Session["user"]);
+            DB01TEST01Entities n = new DB01TEST01Entities();
+            var v = n.loogiin().ToList();
+            foreach(var item in v)
+            {
+                if (item.sid==obj.EmployeeID && item.password==obj.password)
+                {
+                    ViewBag.abc = n.main_hai(item.sid);
+                    return View("dekho");
+
+                }
+            }
+            return View();
+        }
+        public ActionResult dekho()
+        {
+            return View();
+        }
+        public ActionResult pend(int EID)
+        {
+            DB01TEST01Entities n = new DB01TEST01Entities();
+            ViewBag.xyz = n.e_ke_ll(EID);
+            return View();
+        }
+        [HttpPost]
+        public ActionResult pend(string EID)
+        {
+            int id = Convert.ToInt32(EID);
+            DB01TEST01Entities n = new DB01TEST01Entities();
+            ViewBag.xyz = n.e_ke_ll(id);
+            return View();
+        }
+        public ActionResult approve(int Lid , int  EID)
+        {
+            DB01TEST01Entities n = new DB01TEST01Entities();
+            n.updlev(Lid , "Approved");
+            ViewBag.xyz = n.e_ke_ll(EID);
+            return View("pend");
+        }
+        public ActionResult reject(int Lid, int EID)
+        {
+            DB01TEST01Entities n = new DB01TEST01Entities();
+            n.updlev(Lid, "Rejected");
+            ViewBag.xyz = n.e_ke_ll(EID);
+            return View("pend");
+        }
+      
+
+    }
+}
