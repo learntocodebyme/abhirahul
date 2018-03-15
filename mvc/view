@@ -1,0 +1,22 @@
+
+@{
+    ViewBag.Title = "View Leaves";
+}
+
+<h2>View Leaves</h2>
+<table border="1" cellpadding="10">
+    <thead>
+        <th>Employee name</th>
+        <th>Number of leaves</th>
+        <th>Action</th>
+    </thead>
+    @foreach(var item in ViewBag.abc)
+    {
+        <tr>
+            <td>@item.name</td>
+            <td>@item.no_of_leaves</td>
+            <td>@Html.ActionLink("Show pending leaves","pend", new { @item.EID })</td>
+        </tr>
+    }
+</table>
+
